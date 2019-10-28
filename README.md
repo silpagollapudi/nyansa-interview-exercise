@@ -39,3 +39,5 @@ Clone the repository using git. Can use https://github.com/silpagollapudi/nyansa
 ### Notes
 
 When asked for file name, make sure file name is typed using quotation marks.
+
+Big O: O(N^2)
