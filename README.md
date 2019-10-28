@@ -31,7 +31,7 @@ Output <br>
 
 ### How to run program
 
-Clone the repository using git. Can use 
+Clone the repository using git. Can use https://github.com/silpagollapudi/nyansa-interview-exercise.git
 
 `cd nyansa-interview-exercise` <br>
 `python exercise1.py`
