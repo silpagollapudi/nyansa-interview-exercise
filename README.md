@@ -33,7 +33,7 @@ Output <br>
 
 Clone the repository using git. Can use https://github.com/silpagollapudi/nyansa-interview-exercise.git
 
-`cd nyansa-interview-exercise` <br>
+`cd first-exercise` <br>
 `python exercise1.py` <br>
 `Please enter a filename: "input.txt"`
 
