@@ -38,4 +38,4 @@ Clone the repository using git. Can use https://github.com/silpagollapudi/nyansa
 
 ### Notes
 
-When asked for file name. Make sure file name is typed using quotation marks.
+When asked for file name, make sure file name is typed using quotation marks.
