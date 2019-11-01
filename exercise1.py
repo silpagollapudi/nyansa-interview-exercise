@@ -1,14 +1,27 @@
 import datetime
+import operator
 
 filename = input('Enter a filename: ')
 file = open(filename, "r")
 
+if file.mode == 'r':
+    data = file.read()
+
+# process data
+arr = data.split('\n')
+for i in range(len(arr)):
+    arr[i] = arr[i].split('|')
+    if (arr[i] != ['']):
+        epoch_time = float(arr[i][0])
+        arr[i][0] = datetime.datetime.fromtimestamp((epoch_time)).strftime('%m/%d/%Y GMT')
+arr.remove([''])
 map = {}
-for line in file:
-    curr = line.split("|")
-    epoch_time = curr[0]
+
+# convert to map data structure
+for i in range(len(arr)):
+    curr = arr[i]
+    converted_date = curr[0]
     url = curr[1]
-    converted_date = datetime.datetime.fromtimestamp(float(epoch_time)).strftime('%m/%d/%Y GMT')
     if converted_date not in map:
         map[converted_date] = [url]
     else:
@@ -16,7 +29,7 @@ for line in file:
         vals.append(url)
         map[converted_date] = vals
 
-
+# print results
 for k in map.keys():
     print(k)
     temp = {}
@@ -26,5 +39,7 @@ for k in map.keys():
         else:
             count = temp[v] + 1
             temp[v] = count
-    for k, v in temp.items():
-        print k.strip() + " " + str(v)
+    sorted_temp = sorted(temp.items(), key=operator.itemgetter(1), reverse=True)
+    for i in range(len(sorted_temp)):
+        curr = sorted_temp[i]
+        print curr[0] + " " + str(curr[1])
